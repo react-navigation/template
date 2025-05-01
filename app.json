@@ -9,13 +9,15 @@
     "newArchEnabled": true,
     "scheme": "helloworld",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.satya164.reactnavigationtemplate"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.satya164.reactnavigationtemplate"
     },
     "web": {
       "favicon": "./assets/favicon.png"

@@ -1,6 +1,7 @@
 import { Assets as NavigationAssets } from '@react-navigation/elements';
 import { DarkTheme, DefaultTheme } from '@react-navigation/native';
 import { Asset } from 'expo-asset';
+import { createURL } from 'expo-linking';
 import * as SplashScreen from 'expo-splash-screen';
 import * as React from 'react';
 import { useColorScheme } from 'react-native';
@@ -14,6 +15,8 @@ Asset.loadAsync([
 
 SplashScreen.preventAutoHideAsync();
 
+const prefix = createURL('/');
+
 export function App() {
   const colorScheme = useColorScheme();
 
@@ -24,10 +27,7 @@ export function App() {
       theme={theme}
       linking={{
         enabled: 'auto',
-        prefixes: [
-          // Change the scheme to match your app's scheme defined in app.json
-          'helloworld://',
-        ],
+        prefixes: [prefix],
       }}
       onReady={() => {
         SplashScreen.hideAsync();

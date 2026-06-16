@@ -9,29 +9,29 @@
     "ios": "expo run:ios"
   },
   "dependencies": {
-    "@expo/metro-runtime": "~55.0.6",
-    "@react-navigation/bottom-tabs": "^7.15.12",
-    "@react-navigation/elements": "^2.9.16",
-    "@react-navigation/native": "^7.2.3",
-    "@react-navigation/native-stack": "^7.14.13",
-    "expo": "^55.0.7",
-    "expo-asset": "~55.0.9",
-    "expo-dev-client": "~55.0.17",
-    "expo-linking": "~55.0.7",
-    "expo-splash-screen": "~55.0.11",
-    "expo-system-ui": "~55.0.10",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
-    "react-native": "0.83.2",
-    "react-native-gesture-handler": "~2.30.0",
-    "react-native-safe-area-context": "~5.6.2",
-    "react-native-screens": "~4.23.0",
+    "@expo/metro-runtime": "~56.0.15",
+    "@react-navigation/bottom-tabs": "^7.18.2",
+    "@react-navigation/elements": "^2.9.25",
+    "@react-navigation/native": "^7.3.3",
+    "@react-navigation/native-stack": "^7.17.5",
+    "expo": "^56.0.12",
+    "expo-asset": "~56.0.17",
+    "expo-dev-client": "~56.0.20",
+    "expo-linking": "~56.0.14",
+    "expo-splash-screen": "~56.0.10",
+    "expo-system-ui": "~56.0.5",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.85.3",
+    "react-native-gesture-handler": "~2.31.1",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-screens": "4.25.2",
     "react-native-web": "^0.21.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@types/react": "~19.2.10",
-    "typescript": "~5.9.2"
+    "typescript": "~6.0.3"
   },
   "private": true
 }

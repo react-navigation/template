@@ -1,22 +1,25 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { HeaderButton, Text } from '@react-navigation/elements';
 import {
-  createStaticNavigation,
-  StaticParamList,
-} from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+  createBottomTabNavigator,
+  createBottomTabScreen,
+} from '@react-navigation/bottom-tabs';
+import { HeaderButton, Text } from '@react-navigation/elements';
+import { createStaticNavigation } from '@react-navigation/native';
+import {
+  createNativeStackNavigator,
+  createNativeStackScreen,
+} from '@react-navigation/native-stack';
 import { Image } from 'react-native';
 import bell from '../assets/bell.png';
 import newspaper from '../assets/newspaper.png';
 import { Home } from './screens/Home';
+import { NotFound } from './screens/NotFound';
 import { Profile } from './screens/Profile';
 import { Settings } from './screens/Settings';
 import { Updates } from './screens/Updates';
-import { NotFound } from './screens/NotFound';
 
 const HomeTabs = createBottomTabNavigator({
   screens: {
-    Home: {
+    Home: createBottomTabScreen({
       screen: Home,
       options: {
         title: 'Feed',
@@ -31,8 +34,8 @@ const HomeTabs = createBottomTabNavigator({
           />
         ),
       },
-    },
-    Updates: {
+    }),
+    Updates: createBottomTabScreen({
       screen: Updates,
       options: {
         tabBarIcon: ({ color, size }) => (
@@ -46,20 +49,20 @@ const HomeTabs = createBottomTabNavigator({
           />
         ),
       },
-    },
+    }),
   },
 });
 
 const RootStack = createNativeStackNavigator({
   screens: {
-    HomeTabs: {
+    HomeTabs: createNativeStackScreen({
       screen: HomeTabs,
       options: {
         title: 'Home',
         headerShown: false,
       },
-    },
-    Profile: {
+    }),
+    Profile: createNativeStackScreen({
       screen: Profile,
       linking: {
         path: ':user(@[a-zA-Z0-9-_]+)',
@@ -70,8 +73,8 @@ const RootStack = createNativeStackNavigator({
           user: (value) => `@${value}`,
         },
       },
-    },
-    Settings: {
+    }),
+    Settings: createNativeStackScreen({
       screen: Settings,
       options: ({ navigation }) => ({
         presentation: 'modal',
@@ -81,8 +84,8 @@ const RootStack = createNativeStackNavigator({
           </HeaderButton>
         ),
       }),
-    },
-    NotFound: {
+    }),
+    NotFound: createNativeStackScreen({
       screen: NotFound,
       options: {
         title: '404',
@@ -90,7 +93,7 @@ const RootStack = createNativeStackNavigator({
       linking: {
         path: '*',
       },
-    },
+    }),
   },
 });
 
@@ -98,6 +101,6 @@ export const Navigation = createStaticNavigation(RootStack);
 
 type RootStackType = typeof RootStack;
 
-declare module '@react-navigation/core' {
+declare module '@react-navigation/native' {
   interface RootNavigator extends RootStackType {}
 }

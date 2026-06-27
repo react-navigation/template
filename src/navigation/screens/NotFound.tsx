@@ -1,4 +1,4 @@
-import { Text, Button } from '@react-navigation/elements';
+import { Button, Text } from '@react-navigation/elements';
 import { StyleSheet, View } from 'react-native';
 
 export function NotFound() {
